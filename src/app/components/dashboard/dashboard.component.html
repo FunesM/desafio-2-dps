@@ -1,0 +1,115 @@
+<p>dashboard works!</p>
+
+<!-- Top navigation -->
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0">
+      <img class="brand-logo" src="" alt="Logo">
+    </a>
+  </nav>
+  
+  <!-- Sidebar navigation -->
+  <div class="container-fluid">
+    <div class="row">
+  
+      <nav class="col-md-2 d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active">
+                <i class="fas fa-user"></i>User Profile
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active">
+                <i class="fas fa-prescription"></i>Student
+              </a>
+            </li>
+            <!-- Calling SignOut() Api from AuthService -->
+            <li class="nav-item">
+              <a class="nav-link" (click)="authService.SignOut()">
+                <i class="fas fa-sign-out-alt"></i>Log out
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  
+      <!-- Main content -->
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="inner-adjust">
+  
+          <div class="pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">User Profile</h1>
+          </div>
+          <!-- Show user data when logged in -->
+          <div class="row" *ngIf="authService.userData as user">
+            <div class="col-md-12">
+              <div class="media">
+                <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
+                  alt="{{user.displayName}}">
+                <div class="media-body">
+                  <h1>Bienvenido</h1>
+                  <p>User ID: <strong>{{user.uid}}</strong></p>
+                  <p>Email: <strong>{{user.email}}</strong></p>
+                  <p style="visibility: hidden">Email Verified: <strong>{{user.emailVerified}}</strong></p>
+                </div>
+            </div>
+    </div>
+    <div class="inner-adjust">
+    <h1>Datos de Cliente</h1>
+    <p>Ingrese los datos del Cliente</p>
+    </div>
+    <div class="inner-adjust">
+          <label>Nombre:</label> 
+          <input type="text" [(ngModel)]="nombre">
+          <label>Dui:</label> 
+          <input type="text" [(ngModel)]="dui"> 
+          <label>Nombre de la mascota:</label> 
+          <input type="text" [(ngModel)]="mascota">
+          <label>Tratamiento:</label> 
+          <input type="text" [(ngModel)]="tratamiento">
+          <label>Medicamento:</label> 
+          <input type="text" [(ngModel)]="medicamento">
+          <label>Costo:</label> 
+          <input type="text" [(ngModel)]="costo">
+          <label>Visita:</label> 
+          <input type="text" [(ngModel)]="visita">
+          <button class="button" (click)="ingresar()">Ingresar</button> 
+   
+   <br/>
+   <br/>
+    <table [hidden]="contador == 0"> 
+   <thead> 
+   <tr>
+   <th>Nombre</th> 
+   <th>Dui</th> 
+   <th>Nombre de la mascota</th>
+   <th>Tratamiento</th>
+   <th>Medicamento</th> 
+    <th>Costo</th>
+    <th>Visita</th>
+    <th>Descuento</th>
+    <th>Total</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tcliente of registro">
+        <td>{{cliente.nombre}}</td> 
+       <td>{{cliente.dui}}</td>
+        <td>{{cliente.mascota}}</td> 
+        <td>{{cliente.tratamiento}}</td>
+        <td>{{cliente.medicamento}}</td>
+        <td>{{cliente.costo}}</td>
+        <td>{{cliente.visita}}</td>
+        <td>{{cliente.descuento}}</td>
+        <td>{{cliente.total}}</td>
+       </tr> 
+       </tbody>
+        </table>
+    <div>
+    </div>
+
+      
+    </div>
+  </div>
+</div> 

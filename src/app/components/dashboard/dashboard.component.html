@@ -61,19 +61,19 @@
     </div>
     <div class="inner-adjust">
           <label>Nombre:</label> 
-          <input type="text" [(ngModel)]="nombre">
+          <input type="text" onkeydown="return /[a-z, ]/i.test(event.key)" onblur="if (this.value == '') {this.value = '';}" onfocus="if (this.value == '') {this.value = '';}" [(ngModel)]="nombre">
           <label>Dui:</label> 
-          <input type="text" [(ngModel)]="dui"> 
+          <input type="text" placeholder="XXXXXXXX-X" maxlength="9" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" [(ngModel)]="dui"> 
           <label>Nombre de la mascota:</label> 
-          <input type="text" [(ngModel)]="mascota">
+          <input type="text" onkeydown="return /[a-z, ]/i.test(event.key)" onblur="if (this.value == '') {this.value = '';}" onfocus="if (this.value == '') {this.value = '';}" [(ngModel)]="mascota">
           <label>Tratamiento:</label> 
-          <input type="text" [(ngModel)]="tratamiento">
+          <input type="text" onkeydown="return /[a-z, ]/i.test(event.key)" onblur="if (this.value == '') {this.value = '';}" onfocus="if (this.value == '') {this.value = '';}" [(ngModel)]="tratamiento">
           <label>Medicamento:</label> 
-          <input type="text" [(ngModel)]="medicamento">
+          <input type="text" onkeydown="return /[a-z, ]/i.test(event.key)" onblur="if (this.value == '') {this.value = '';}" onfocus="if (this.value == '') {this.value = '';}" [(ngModel)]="medicamento">
           <label>Costo:</label> 
-          <input type="text" [(ngModel)]="costo">
+          <input type="text" placeholder="$0.00" maxlength="9" onfocus="this.value=''" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" [(ngModel)]="costo">
           <label>Visita:</label> 
-          <input type="text" [(ngModel)]="visita">
+          <input type="text" placeholder="X" maxlength="9" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" [(ngModel)]="visita">
           <button class="button" (click)="ingresar()">Ingresar</button> 
    
    <br/>

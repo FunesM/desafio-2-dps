@@ -38,8 +38,8 @@ if(this.visita >=2){
 this.descuento=this.costo*0.05; 
 this.total=this.costo-this.descuento;   
 }
-if(this.visita >=4) {
-this.descuento= this.costo*0.10;
+if(this.visita >=5) {
+this.descuento= this.costo*0.08;
 this.total=this.costo-this.descuento;
 
 }

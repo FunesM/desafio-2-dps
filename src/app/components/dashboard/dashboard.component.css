@@ -56,3 +56,6 @@
         background-color: blue;
         color: white;
     }
+    .centro{
+        align-items: center;
+    }

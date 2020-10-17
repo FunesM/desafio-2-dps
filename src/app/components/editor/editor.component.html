@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>WORD UDB</title>
+	<!--<link rel="stylesheet" type="text/css" href="css/menu.css">
+	<script type="text/javascript" src="js/editor.js"></script>-->
+	<script>
+
+		function init(x) {
+			if (x=="h") {document.getElementById('txtbox').style.display='none';document.getElementById('text').style.display='block';}
+			if (x=="s") {document.getElementById('txtbox').style.display='block';document.getElementById('text').style.display='none';}
+			
+			document.getElementById('text').value=document.getElementById('txtbox').innerHTML;
+			
+
+			if (x!="h" || x!="s") document.execCommand(x,false,null);
+			document.getElementById('txtbox').focus();
+}
+	</script>
+
+</head>
+<body>
+
+	<div class="wrapper">
+		<div class="sidebar">
+			<h2><i class="fab fa-wordpress-simple"></i> WORD UDB</h2>
+			<ul>
+				<!--<li><a href="NuevoDocumento.html"><i class="fas fa-file-word"></i> Nuevo Documento</a></li>
+				<li><a href="Ayuda.html"><i class="fas fa-hands-helping"></i> Ayuda</a></li>
+				<li><a href="AcercaDe.html"><i class="fas fa-address-card"></i> Acerca de</a></li>-->
+				
+			</ul>
+			
+		</div>
+		<div class="main_content">
+			<div class="header">Bienvenido a WORD UDB</div>
+			<div class="info">
+				<div>
+					<p> <!--style="width:100%;height:100000;padding:10px; top: 1000px;background:white;"-->
+						<button onclick="init('bold')">Negrita</button>
+						<button onclick="init('italic')">Itálica</button>
+						<button onclick="init('underline')">Subrayado</button>
+						<button onclick="init('justifycenter')">Centrado</button>
+						<button onclick="init('increasefontsize')">Fuente +</button>
+						<button onclick="init('inserthorizontalrule')">Línea Hr.</button>
+						<button onclick="init('redo')">Rehacer</button>
+						<button onclick="init('undo')">Deshacer</button>
+						<hr>
+				<div id="txtbox" contenteditable="true" style="align:center; width:90%;height:750px;padding:10px; top: 1000px; background: white;">
+					</div>
+							<textarea id="text" name="text"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

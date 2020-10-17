@@ -82,7 +82,7 @@ export class AuthService {
   // el correo electrónico está verificado
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
-    return (user !== null && user.emailVerified !== false) ? true : true;
+    return (user !== null && user.emailVerified !== false) ? true : false;
   }
 
 // Iniciar sesión usando Facebook

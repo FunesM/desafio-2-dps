@@ -22,6 +22,8 @@ import { AuthService } from "./services/auth.service";
 import { AuthGuard } from "./guard/auth.guard";
 
 import { RegistroComponent } from '../app/registro.component';
+import { EditorComponent } from './components/editor/editor.component';
+import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { RegistroComponent } from '../app/registro.component';
     SignUpComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
-    RegistroComponent
+    RegistroComponent,
+    EditorComponent,
+    AcercaDeComponent
     ],
   imports: [
     BrowserModule,

@@ -1,6 +1,3 @@
-<p>dashboard works!</p>
-
-<!-- Top navigation -->
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0">
       <img class="brand-logo" src="" alt="Logo">
@@ -55,61 +52,13 @@
                 </div>
             </div>
     </div>
-    <div class="inner-adjust">
-    <h1>Datos de Cliente</h1>
-    <p>Ingrese los datos del Cliente</p>
-    </div>
-    <div class="inner-adjust">
-          <label>Nombre:</label> 
-          <input type="text" onkeydown="return /[a-z, ]/i.test(event.key)" onblur="if (this.value == '') {this.value = '';}" onfocus="if (this.value == '') {this.value = '';}" [(ngModel)]="nombre">
-          <label>Dui:</label> 
-          <input type="text" placeholder="XXXXXXXX-X" maxlength="9" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" [(ngModel)]="dui"> 
-          <label>Nombre de la mascota:</label> 
-          <input type="text" onkeydown="return /[a-z, ]/i.test(event.key)" onblur="if (this.value == '') {this.value = '';}" onfocus="if (this.value == '') {this.value = '';}" [(ngModel)]="mascota">
-          <label>Tratamiento:</label> 
-          <input type="text" onkeydown="return /[a-z, ]/i.test(event.key)" onblur="if (this.value == '') {this.value = '';}" onfocus="if (this.value == '') {this.value = '';}" [(ngModel)]="tratamiento">
-          <label>Medicamento:</label> 
-          <input type="text" onkeydown="return /[a-z, ]/i.test(event.key)" onblur="if (this.value == '') {this.value = '';}" onfocus="if (this.value == '') {this.value = '';}" [(ngModel)]="medicamento">
-          <label>Costo:</label> 
-          <input type="text" placeholder="$0.00" maxlength="9" onfocus="this.value=''" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" [(ngModel)]="costo">
-          <label>Visita:</label> 
-          <input type="text" placeholder="X" maxlength="9" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" [(ngModel)]="visita">
-          <button class="button" (click)="ingresar()">Ingresar</button> 
-   
-   <br/>
-   <br/>
-    <table [hidden]="contador == 0"> 
-   <thead> 
-   <tr>
-   <th>Nombre</th> 
-   <th>Dui</th> 
-   <th>Nombre de la mascota</th>
-   <th>Tratamiento</th>
-   <th>Medicamento</th> 
-    <th>Costo</th>
-    <th>Visita</th>
-    <th>Descuento</th>
-    <th>Total</th>
-    </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let tcliente of registro">
-        <td>{{cliente.nombre}}</td> 
-       <td>{{cliente.dui}}</td>
-        <td>{{cliente.mascota}}</td> 
-        <td>{{cliente.tratamiento}}</td>
-        <td>{{cliente.medicamento}}</td>
-        <td>{{cliente.costo}}</td>
-        <td>{{cliente.visita}}</td>
-        <td>{{cliente.descuento}}</td>
-        <td>{{cliente.total}}</td>
-       </tr> 
-       </tbody>
-        </table>
     <div>
-    </div>
-
-      
+        <h3>¿Qué desea hacer?</h3>
+    <table style="border: hidden">
+    	<tr>
+    		<td><span class="redirect" routerLink="/editor">¿Crear un nuevo documento?</span></td>
+    	</tr>
+    </table>
     </div>
   </div>
 </div> 
